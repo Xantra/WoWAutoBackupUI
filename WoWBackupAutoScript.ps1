@@ -1,4 +1,4 @@
-﻿
+
 Param (
 	[Parameter(Mandatory, HelpMessage = "Please provide the Drive letter where your wow folder lives")][string]$PathLetter,
 	[Parameter(Mandatory, HelpMessage = "Retail, Classic (Choose one)")][string]$WowType 
@@ -22,11 +22,16 @@ if ($WowType -eq "Retail"){
 			Remove-Item -Path "C:\Users\${user}\Desktop\$($BackupNames[0])"
 			$BackupNames.RemoveAt(0)
 		}
-	}
+	} # if ($WoWPath[1] -like "*World of Warcraft*"){Write-host YEP}
 	$NameToFind = "_retail_"
 	$WoWPath = (Get-ChildItem -Path $BaseDir -Filter "$NameToFind" -Recurse -Directory).Fullname
-	Compress-Archive -Path "${WoWPath}\WTF" -CompressionLevel 'Fastest' -DestinationPath "C:\Users\${user}\Desktop\backupUIRetail-$date"
-	Write-Host "Created backup at $('C:\Users\'+ ${user} +'\Desktop\backupUIRetail-' + $date + '.zip')"
+	for ($i = 0 ; $i -le $WoWPath.Count ; $i++ ){
+		if ($WoWPath[$i] -like "*World of Warcraft*"){
+			$Path = $WoWPath[$i]
+			Compress-Archive -Path "${Path}\WTF" -CompressionLevel 'Fastest' -DestinationPath "C:\Users\${user}\Desktop\backupUIRetail-$date"
+			Write-Host "Created backup at $('C:\Users\'+ ${user} +'\Desktop\backupUIRetail-' + $date + '.zip')"
+		}
+	}	
 }
 else {
 	if ($WowType -eq "Classic"){
@@ -46,8 +51,13 @@ else {
 	}
 	$NameToFind = "_classic_"
 	$WoWPath = (Get-ChildItem -Path $BaseDir -Filter "$NameToFind" -Recurse -Directory).Fullname
-	Compress-Archive -Path "${WoWPath}\WTF" -CompressionLevel 'Fastest' -DestinationPath "C:\Users\${user}\Desktop\backupUIClassic-$date"
-	Write-Host "Created backup at $('C:\Users\'+ ${user} +'\Desktop\backupUIClassic-' + $date + '.zip')"
+	for ($i = 0 ; $i -le $WoWPath.Count ; $i++ ){
+		if ($WoWPath[$i] -like "*World of Warcraft*"){
+			$Path = $WoWPath[$i]
+			Compress-Archive -Path "${Path}\WTF" -CompressionLevel 'Fastest' -DestinationPath "C:\Users\${user}\Desktop\backupUIClassic-$date"
+			Write-Host "Created backup at $('C:\Users\'+ ${user} +'\Desktop\backupUIClassic-' + $date + '.zip')"
+		}
+	}
 }
 
 
