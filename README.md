@@ -8,14 +8,16 @@ Step 1
 ---
 [Download the latest .ps1 released script.](https://github.com/Xantra/WoWAutoBackupUI/releases/tag/v1.2)
 Unzip where you want, preferably a place it won't get deleted by accident.
+
 *Note: We only need the .ps1 file*
 
 Step 2
 ---
 Press **Win** and type **Powershell**, right click on **Windows Powershell** and launch it as administrator.
+
 *Note: For those Poweruser you can Ctrl+Shift+Enter to launch as Admin.*
 
-Type this command: `Set-ExecutionPolicy -ExecutionPolicy Unrestricted`
+Type this command: `Set-ExecutionPolicy -ExecutionPolicy Unrestricted` and press **Enter**.
 It is a bit scuffed and I will work on making the script signed so we can switch back that policy.
 
 Step 3
