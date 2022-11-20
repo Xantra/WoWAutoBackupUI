@@ -6,7 +6,7 @@ This script will compress your WTF folder in a ZIP file and put in on your deskt
 
 Step 1
 ---
-[Download the latest .ps1 released script.](https://github.com/Xantra/WoWAutoBackupUI/releases/tag/Release)
+[Download the latest .ps1 released script.](https://github.com/Xantra/WoWAutoBackupUI/releases/tag/v1.1)
 
 Step 2
 ---
