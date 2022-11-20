@@ -1,5 +1,7 @@
 # Xantra's AutoBackupUI Script
 
+This script will compress your WTF folder in a ZIP file and put in on your desktop, it only keeps the 4 most recent backups.
+
 ## Setting the Script up
 
 Step 1
@@ -50,6 +52,8 @@ Step 6
 Copy the settings on the screenshot.
 
 ![Image](https://i.imgur.com/lK1pB9R.png)
+
+**Ccongratulations you are done!**
 
 
 
